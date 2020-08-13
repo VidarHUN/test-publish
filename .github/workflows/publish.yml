@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org
-      - name: publish
-        run:
-          - npm version from-git 
-          - npm publish --access public
+      - name: tag
+        run: npm version from-git 
+      - name: publish    
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
