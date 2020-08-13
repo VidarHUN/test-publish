@@ -19,8 +19,6 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: git-tag
         run: git describe --tags
-      - name: tag
-        run: npm version from-git 
       - name: publish    
         run: npm publish --access public
         env:
