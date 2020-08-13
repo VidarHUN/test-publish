@@ -1,0 +1,10 @@
+{
+  "name": "test-publish",
+  "version": "1.0.0",
+  "description": "Test for auto publish",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Richard Varadi"
+}
