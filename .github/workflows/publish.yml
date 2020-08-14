@@ -18,7 +18,7 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org
       - name: git-tag
-        run: git describe --tags
+        run: echo "$GITHUB_REF"
       - name: publish    
         run: npm publish --access public
         env:
