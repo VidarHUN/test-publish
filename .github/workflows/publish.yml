@@ -20,12 +20,13 @@ jobs:
       - name: versioning
         run: npm version --new-version "${GITHUB_REF:11}" --no-git-tag-version
       - name: Commit changes
-        uses: EndBug/add-and-commit@v4
+        uses: github-actions-x/commit@v2.6
         with:
-          message: "Update package version"
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          push-branch: master
+          commit-message: "Update package version"
           add: "*.json"
       - name: publish    
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
