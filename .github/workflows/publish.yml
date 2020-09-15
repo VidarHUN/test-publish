@@ -53,5 +53,5 @@ jobs:
         with:
           push: true
           tags: |
-            vidarhun/test-publish: latest
-            vidarhun/test-publish: ${GITHUB_REF:11}
+            vidarhun/test-publish:latest
+            vidarhun/test-publish:${GITHUB_REF:11}
