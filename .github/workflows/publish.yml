@@ -38,6 +38,14 @@ jobs:
     name: push docker image to dockerhub
     runs-on: ubuntu-latest
     steps:
+      - name: Prepare
+        id: prep
+        run: |
+          DOCKER_IMAGE=vidarhun/test-publish
+          VERSION=${GITHUB_REF#refs/tags/}
+          TAGS="${DOCKER_IMAGE}:${VERSION}"
+          TAGS="$TAGS, ${DOCKER_IMAGE}:latest"
+          echo ::set-output name=tags::${TAGS}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
@@ -54,6 +62,4 @@ jobs:
           tag: ${GITHUB_REF:11}
         with:
           push: true
-          tags: |
-            vidarhun/test-publish:latest
-            vidarhun/test-publish:$tag
+          tags: ${{ steps.prep.outputs.tags }}
