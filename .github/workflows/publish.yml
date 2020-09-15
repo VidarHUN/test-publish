@@ -50,8 +50,10 @@ jobs:
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
+        env:
+          tag: ${GITHUB_REF:11}
         with:
           push: true
           tags: |
             vidarhun/test-publish:latest
-            vidarhun/test-publish:${GITHUB_REF:11}
+            vidarhun/test-publish:$tag
