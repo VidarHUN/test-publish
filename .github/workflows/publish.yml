@@ -47,3 +47,12 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
           repository: vidarhun/test-publish
           tag_with_ref: true
+      - name: checkout_latest
+        uses: actions/checkout@v2
+      - name: push to dockerhub latest
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+          repository: vidarhun/test-publish
+
