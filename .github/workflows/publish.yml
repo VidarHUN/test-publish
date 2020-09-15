@@ -61,5 +61,7 @@ jobs:
         env:
           tag: ${GITHUB_REF:11}
         with:
+          context: .
+          file: ./Dockerfile
           push: true
           tags: ${{ steps.prep.outputs.tags }}
