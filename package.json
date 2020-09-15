@@ -1,5 +1,5 @@
 {
-  "name": "@vidarhun/test-publish",
+  "name": "@valamitest/test-publish",
   "version": "1.19.0",
   "description": "Test for auto publish",
   "main": "index.js",
