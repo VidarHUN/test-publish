@@ -1,6 +1,6 @@
 {
   "name": "@valamitest/test-publish",
-  "version": "2.11.0",
+  "version": "2.12.0",
   "description": "Test for auto publish",
   "main": "index.js",
   "scripts": {
