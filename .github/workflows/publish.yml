@@ -43,7 +43,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=${{secrets.DOCKER_USER}}/test-publish
+          DOCKER_IMAGE=vidarhun/test-publish
           echo ${DOCKER_IMAGE}
           VERSION=${GITHUB_REF:11}
           TAGS="${DOCKER_IMAGE}:${VERSION}"
