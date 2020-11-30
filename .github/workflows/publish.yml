@@ -44,6 +44,7 @@ jobs:
         id: prep
         run: |
           DOCKER_IMAGE=${{secrets.DOCKER_USER}}/test-publish
+          echo ${DOCKER_IMAGE}
           VERSION=${GITHUB_REF:11}
           TAGS="${DOCKER_IMAGE}:${VERSION}"
           TAGS="$TAGS, ${DOCKER_IMAGE}:latest"
@@ -66,6 +67,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: |
-            vidarhun/test-publish:latest
-            vidarhun/test-publish:${GITHUB_REF:11}
+          tags: ${{ steps.prep.outputs.tags }}
