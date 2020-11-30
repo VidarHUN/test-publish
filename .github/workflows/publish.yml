@@ -66,4 +66,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.prep.outputs.tags }}
+          tags: |
+            vidarhun/test-publish:latest
+            vidarhun/test-publish:${GITHUB_REF:11}
