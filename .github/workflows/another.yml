@@ -29,11 +29,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: test
         run: |
+          echo "Just normally"
+          ls
+          echo "Upper one"
           cd ..
-          ls
-          cd test-publish
-          ls
-          cd ../test-another
           ls
       - name: push
         uses: ad-m/github-push-action@master
