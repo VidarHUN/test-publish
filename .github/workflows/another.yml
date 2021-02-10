@@ -19,6 +19,15 @@ jobs:
           git config --global user.name "Github Robot"
           git add .
           git commit -m "test"
+      - name: second_checkout
+        uses: actions/checkout@v2.1.1
+        with:
+          repository: VidarHUN/test-another
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: test
+        run: |
+          cd ..
+          echo "${PWD}"
       - name: push
         uses: ad-m/github-push-action@master
         with:
