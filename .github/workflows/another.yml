@@ -31,9 +31,10 @@ jobs:
         run: |
           echo "Just normally"
           ls
-          echo "Upper one"
-          cd ..
-          ls
+          echo "test-publish"
+          ls test-publish
+          echo "test-another"
+          ls test-another
       - name: push
         uses: ad-m/github-push-action@master
         with:
