@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2.1.1
+        with:
+          path: test-publish
       - name: pull
         run: |
           echo "${PWD}"
@@ -22,6 +24,7 @@ jobs:
       - name: second_checkout
         uses: actions/checkout@v2.1.1
         with:
+          path: test-another
           repository: VidarHUN/test-another
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: test
