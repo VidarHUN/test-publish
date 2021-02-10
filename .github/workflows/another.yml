@@ -1,0 +1,26 @@
+name: "another"
+
+on: [ push ]
+
+jobs:
+  another:
+    name: another
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.1.1
+      - name: pull
+        run: |
+          git clone https://github.com/VidarHUN/test-another.git
+          cd test-another
+          echo "test" >> README.md
+          git config --global user.email "github_robot@github.com"
+          git config --global user.name "Github Robot"
+          git add .
+          git commit -m "test"
+      - name: push
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository: https://github.com/VidarHUN/test-another.git
