@@ -16,7 +16,6 @@ jobs:
         with:
           path: test-another
           repository: VidarHUN/test-another
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: pull
         run: |
           cd test-another
