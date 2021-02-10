@@ -14,7 +14,7 @@ jobs:
       - name: second_checkout
         uses: actions/checkout@v2.1.1
         with:
-          token: ${{PAT_TOKEN}}
+          token: ${{secrets.PAT_TOKEN}}
           path: test-another
           repository: VidarHUN/test-another
       - name: pull
