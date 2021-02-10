@@ -16,6 +16,7 @@ jobs:
         with:
           path: test-another
           repository: VidarHUN/test-another
+          persist-credentials: false
       - name: pull
         run: |
           cd test-another
