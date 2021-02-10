@@ -21,10 +21,11 @@ jobs:
         run: |
           cd test-another
           echo "test" >> README.md
+      - name: push
+        run: |
+          cd test-another
           git config --global user.email "github_robot@github.com"
           git config --global user.name "Github Robot"
           git add .
           git commit -m "test"
-      - name: push
-        run: |
-          ls
+          git push
