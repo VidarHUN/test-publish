@@ -11,21 +11,12 @@ jobs:
         uses: actions/checkout@v2.1.1
         with:
           path: test-publish
-      - name: second_checkout
-        uses: actions/checkout@v2.1.1
-        with:
-          path: test-another
-          repository: VidarHUN/test-another
-          persist-credentials: false
-      - name: pull
+      - name: test
         run: |
+          cd ..
+          git clone --depth 1 https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/VidarHUN/test-another.git /test-another
           cd test-another
           echo "test" >> README.md
-      - name: push
-        run: |
-          cd test-another
-          git config --global user.email "github_robot@github.com"
-          git config --global user.name "Github Robot"
           git add .
-          git commit -m "test"
+          git commi -m "test"
           git push
