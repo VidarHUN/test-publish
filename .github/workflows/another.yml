@@ -23,4 +23,4 @@ jobs:
         with:
           branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: https://github.com/VidarHUN/test-another.git
+          repository: VidarHUN/test-another
