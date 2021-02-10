@@ -13,7 +13,6 @@ jobs:
           path: test-publish
       - name: test
         run: |
-          cd ..
           git clone --depth 1 https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/VidarHUN/test-another.git /test-another
           cd test-another
           echo "test" >> README.md
