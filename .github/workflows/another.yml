@@ -11,6 +11,7 @@ jobs:
         uses: actions/checkout@v2.1.1
       - name: pull
         run: |
+          echo "${PWD}"
           git clone https://github.com/VidarHUN/test-another.git
           cd test-another
           echo "test" >> README.md
